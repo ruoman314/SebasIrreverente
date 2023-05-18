@@ -13,49 +13,25 @@
 <div class="row">
 	<div class="col-4">
 		<div class="container-fluid">
-      <a href="250ma100M.html">Video - 250.000 pesos a 100 millones</a>
+      <a href="250ma100M.html" class="btn btn-outline-dark">Video - 250.000 pesos a 100 millones</a>
 		</div>
+	</div>
 	<div class="col-8">
 		<div class="container-fluid">
 			<br>
-			<div class="mb-3">
-				<label for="exampleFormControlInput1" class="form-label">Ahorro mensual</label>
-				<input type="text" class="form-control" id="valorInicial" placeholder="250000">
-			</div>
-			<div class="mb-3">
-				<label for="exampleFormControlInput1" class="form-label">Tasa de interes sin el símbolo %</label>
-				<input type="text" class="form-control" id="tasa" placeholder="15">
-			</div>
-			<div class="mb-3">
-				<label for="exampleFormControlInput1" class="form-label">Plazo en meses</label>
-				<input type="text" class="form-control" id="plazo" placeholder="120">
-			</div>
-			<button type="button" class="btn btn-primary" onclick="calcularValorFuturoCDT()">Calcular</button>
-			<hr>
-			<br>
-			<div class="mb-3">
-				<label for="exampleFormControlInput1" class="form-label">Resultado</label>
-				<input type="text" class="form-control" id="resultado">
-				<a href="250ma100M.html"></a>
+			<div class="card">
+				<div class="card-header">Robinson Urrea - Lic. Español y Literatura</div>
+				<div class="card-body">
+					<h5 class="card-title">Autodidacta</h5>
+					<p class="card-text">Cada día aprendo algo nuevo que quiero compartir, este espacio estará creciendo
+					con cada conocimiento adquirido, "Un día que no se aprende, es un día perdido."</p>
+					<a href="https://www.youtube.com/@ruoman9" class="btn btn-primary">Canal de youtube iniciando</a>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
- <script type="text/javascript">
-function calcularValorFuturoCDT(montoInicial, tasaInteres, plazo) {
-  var pagoPeriodo = document.getElementById('valorInicial').value;
-  var tasaInteres = document.getElementById('tasa').value;
-  var plazo = document.getElementById('plazo').value;
-  var inputresultado = document.getElementById("resultado");
-  var tasaMensual = tasaInteres/12;
-  var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
-  var valorFuturo = pagoPeriodo * ((Math.pow(1 + tasaDecimal, plazo) - 1) / tasaDecimal); // Fórmula del valor futuro de una anualidad
 
-  inputresultado.value = valorFuturo.toFixed(2); // Redondear el resultado a dos decimales y devolverlo como cadena de texto
-}
-
- </script>
-<script async src="https://www.tiktok.com/embed.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
