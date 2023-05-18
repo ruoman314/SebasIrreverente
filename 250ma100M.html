@@ -48,7 +48,7 @@ function calcularValorFuturoCDT(montoInicial, tasaInteres, plazo) {
   var plazo = document.getElementById('plazo').value;
   var inputresultado = document.getElementById("resultado");
   var tasaMensual = (tasaInteres/12).toFixed(1);
-  var tasaDecimal = (tasaMensual / 100).toFixed(3); // Convertir la tasa de interés a decimal
+  var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
   var valorFuturo = pagoPeriodo * ((Math.pow(1 + tasaDecimal, plazo) - 1) / tasaDecimal); // Fórmula del valor futuro de una anualidad
 
   document.getElementById("resultado").innerHTML = valorFuturo.toFixed(2); // Redondear el resultado a dos decimales y devolverlo como cadena de texto
