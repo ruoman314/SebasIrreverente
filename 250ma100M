@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<title>250 mil mensuales a 64 millones</title>
+</head>
+<body>
+	<div class="container text-center">
+		<h4>250 mil mensuales a 100 millones</h4>
+	</div>
+<div class="row">
+	<div class="col-4">
+		<div class="container-fluid">
+		<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sebas_irreverente/video/7216509245007711494" data-video-id="7216509245007711494" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@sebas_irreverente" href="https://www.tiktok.com/@sebas_irreverente?refer=embed">@sebas_irreverente</a> INVERTIR EN CDTs Y EL INTERES COMPUESTO MEJORADO!           <a title="inversion" target="_blank" href="https://www.tiktok.com/tag/inversion?refer=embed">#inversion</a> <a title="cdt" target="_blank" href="https://www.tiktok.com/tag/cdt?refer=embed">#cdt</a> <a title="finanzas" target="_blank" href="https://www.tiktok.com/tag/finanzas?refer=embed">#finanzas</a> <a title="metas" target="_blank" href="https://www.tiktok.com/tag/metas?refer=embed">#metas</a> <a title="educacion" target="_blank" href="https://www.tiktok.com/tag/educacion?refer=embed">#educacion</a> <a title="finanzaspersonales" target="_blank" href="https://www.tiktok.com/tag/finanzaspersonales?refer=embed">#finanzaspersonales</a> <a title="ganardinero" target="_blank" href="https://www.tiktok.com/tag/ganardinero?refer=embed">#ganardinero</a> <a title="bancos" target="_blank" href="https://www.tiktok.com/tag/bancos?refer=embed">#bancos</a> <a title="educacionfinanciera" target="_blank" href="https://www.tiktok.com/tag/educacionfinanciera?refer=embed">#educacionfinanciera</a> <a title="ingresospasivos" target="_blank" href="https://www.tiktok.com/tag/ingresospasivos?refer=embed">#ingresospasivos</a> <a title="negocios" target="_blank" href="https://www.tiktok.com/tag/negocios?refer=embed">#negocios</a> <a target="_blank" title="♬ Epic Orchestra - Red Cat Blue" href="https://www.tiktok.com/music/Epic-Orchestra-6817535497867364354?refer=embed">♬ Epic Orchestra - Red Cat Blue</a> </section> </blockquote></div></div>
+	<div class="col-8">
+		<div class="container-fluid">
+			<br>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Ahorro mensual</label>
+				<input type="text" class="form-control" id="valorInicial" placeholder="250000">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Tasa de interes sin el símbolo %</label>
+				<input type="text" class="form-control" id="tasa" placeholder="15">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Plazo en meses</label>
+				<input type="text" class="form-control" id="plazo" placeholder="120">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calcularValorFuturoCDT()">Calcular</button>
+			<hr>
+			<br>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Resultado</label>
+				<input type="text" class="form-control" id="resultado">
+			</div>
+		</div>
+	</div>
+</div>
+ <script type="text/javascript">
+function calcularValorFuturoCDT(montoInicial, tasaInteres, plazo) {
+  var pagoPeriodo = document.getElementById('valorInicial').value;
+  var tasaInteres = document.getElementById('tasa').value;
+  var plazo = document.getElementById('plazo').value;
+  var inputresultado = document.getElementById("resultado");
+  var tasaMensual = tasaInteres/12;
+  var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
+  var valorFuturo = pagoPeriodo * ((Math.pow(1 + tasaDecimal, plazo) - 1) / tasaDecimal); // Fórmula del valor futuro de una anualidad
+
+  inputresultado.value = valorFuturo.toFixed(2); // Redondear el resultado a dos decimales y devolverlo como cadena de texto
+}
+
+ </script>
+<script async src="https://www.tiktok.com/embed.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
