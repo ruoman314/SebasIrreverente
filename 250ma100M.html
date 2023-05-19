@@ -92,7 +92,7 @@ function calcularPagoPeriodo(valorFuturo, tasaInteres, plazo) {
   var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
   var pagoPeriodo = valorFuturo * (tasaDecimal / (Math.pow(1 + tasaDecimal, plazo) - 1)); // Fórmula del valor presente de una anualidad para despejar el pago periódico
   var resultado = pagoPeriodo.toFixed(2);
-  var mensaje = 'El valor mensual aproximado es: $',resultado.toLocaleString();
+  var mensaje = 'El valor mensual aproximado es: $'.concat(resultado.toLocaleString());
 	
  document.getElementById("resultado2").innerHTML = pagoPeriodo.toLocaleString(); // Redondear el resultado a dos decimales y devolverlo como cadena de texto
 	
