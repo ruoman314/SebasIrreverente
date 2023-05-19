@@ -77,7 +77,7 @@ function calcularValorFuturoCDT() {
   var pagoPeriodo = document.getElementById('valorInicial').value;
   var tasaInteres = document.getElementById('tasa').value;
   var plazo = document.getElementById('plazo').value;
-  var tasaMensual = tasaInteres/12;
+  var tasaMensual = interesMensual(tasaInteres); //tasaInteres/12;//verificar
   var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
   var valorFuturo = pagoPeriodo * ((Math.pow(1 + tasaDecimal, plazo) - 1) / tasaDecimal); // Fórmula del valor futuro de una anualidad
   var resultado = valorFuturo.toLocaleString("es-CO", { style: "currency", currency: "COP" });
@@ -86,14 +86,15 @@ function calcularValorFuturoCDT() {
 	
   document.getElementById("resultado").innerHTML = mensaje; // Redondear el resultado a dos decimales y devolverlo como cadena de texto
 }
-function calcularPagoPeriodo(valorFuturo, tasaInteres, plazo) {
+
+function calcularPagoPeriodo() {
   var valorFuturo = document.getElementById('valorFuturo').value;
   var tasaInteres = document.getElementById('tasa2').value;
   var plazo = document.getElementById('plazo2').value;
   var inputresultado = document.getElementById("resultado2");
-  var tasaMensual = tasaInteres/12;
-	
+  var tasaMensual = interesMensual(tasaInteres)//tasaInteres/12;
   var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
+
   var pagoPeriodo = valorFuturo * (tasaDecimal / (Math.pow(1 + tasaDecimal, plazo) - 1)); // Fórmula del valor presente de una anualidad para despejar el pago periódico
   var resultado = pagoPeriodo.toLocaleString("es-CO", { style: "currency", currency: "COP" });
   //var resultado = resultad.toFixed(0);
@@ -101,6 +102,13 @@ function calcularPagoPeriodo(valorFuturo, tasaInteres, plazo) {
 	
  document.getElementById("resultado2").innerHTML = mensaje; // Redondear el resultado a dos decimales y devolverlo como cadena de texto
 	
+}
+function interesMensual($tasaAnual) {
+  var tasaAnual = $tasaAnual;
+  //var periodos = 12; // número de periodos en el año
+  var tasaMensual = ((Math.pow( (1 + (tasaAnual / 100) ), (30/360) ) - 1) * 100).toFixed(2);//https://www.ahorrar.com.co/convertir-tasa-efectiva-anual-a-mensual.html#:~:text=Por%20ejemplo%2C%20si%20quieres%20obtener,Son%20tasas%20equivalentes.
+  var resultado = tasaMensual;
+  return resultado;
 }
 
  </script>
