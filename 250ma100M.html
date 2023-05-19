@@ -77,8 +77,8 @@ function calcularValorFuturoCDT() {
   var tasaMensual = tasaInteres/12;
   var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
   var valorFuturo = pagoPeriodo * ((Math.pow(1 + tasaDecimal, plazo) - 1) / tasaDecimal); // Fórmula del valor futuro de una anualidad
-  var resultad = valorFuturo.toLocaleString();
-  var resultado = resultad.toFixed(0);
+  var resultado = valorFuturo.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  //var resultado = resultad.toFixed(0);
   var mensaje = 'El valor futuro aproximado es: $'.concat(resultado);
 	
   document.getElementById("resultado").innerHTML = mensaje; // Redondear el resultado a dos decimales y devolverlo como cadena de texto
@@ -92,8 +92,8 @@ function calcularPagoPeriodo(valorFuturo, tasaInteres, plazo) {
 	
   var tasaDecimal = tasaMensual / 100; // Convertir la tasa de interés a decimal
   var pagoPeriodo = valorFuturo * (tasaDecimal / (Math.pow(1 + tasaDecimal, plazo) - 1)); // Fórmula del valor presente de una anualidad para despejar el pago periódico
-  var resultad = pagoPeriodo.toLocaleString();
-  var resultado = resultad.toFixed(0);
+  var resultado = pagoPeriodo.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  //var resultado = resultad.toFixed(0);
   var mensaje = 'El valor mensual aproximado es: $'.concat(resultado);
 	
  document.getElementById("resultado2").innerHTML = mensaje; // Redondear el resultado a dos decimales y devolverlo como cadena de texto
