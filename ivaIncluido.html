@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<title>Precio iva incluido</title>
+</head>
+<body>
+	<nav class="navbar bg-dark" data-bs-theme="dark">
+	<div class="container text-center">
+		<h4 style="color: #FFFFFF;">Precio con IVA incluido</h4>
+		</div>
+	</nav>
+	
+<div class="row">
+	<div class="col">
+		<div class="container-fluid">
+		<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sebas_irreverente/video/7219474347243736325" data-video-id="7219474347243736325" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@sebas_irreverente" href="https://www.tiktok.com/@sebas_irreverente?refer=embed">@sebas_irreverente</a> QUÉ ES EL IVA. ¿CÓMO DETERMINAR EL PRECIO? ……………………………………………………………………… <a title="iva" target="_blank" href="https://www.tiktok.com/tag/iva?refer=embed">#IVA</a> <a title="impuestos" target="_blank" href="https://www.tiktok.com/tag/impuestos?refer=embed">#impuestos</a> <a title="petro" target="_blank" href="https://www.tiktok.com/tag/petro?refer=embed">#petro</a> <a title="dian" target="_blank" href="https://www.tiktok.com/tag/dian?refer=embed">#dian</a> <a title="finanzas" target="_blank" href="https://www.tiktok.com/tag/finanzas?refer=embed">#finanzas</a> <a title="educacion" target="_blank" href="https://www.tiktok.com/tag/educacion?refer=embed">#educacion</a> <a title="finanzaspersonales" target="_blank" href="https://www.tiktok.com/tag/finanzaspersonales?refer=embed">#finanzaspersonales</a> <a title="empresa" target="_blank" href="https://www.tiktok.com/tag/empresa?refer=embed">#empresa</a> <a title="negocios" target="_blank" href="https://www.tiktok.com/tag/negocios?refer=embed">#negocios</a> <a title="educacionfinanciera" target="_blank" href="https://www.tiktok.com/tag/educacionfinanciera?refer=embed">#educacionfinanciera</a> <a title="conocimiento" target="_blank" href="https://www.tiktok.com/tag/conocimiento?refer=embed">#conocimiento</a> <a title="dinero" target="_blank" href="https://www.tiktok.com/tag/dinero?refer=embed">#dinero</a> <a title="princing" target="_blank" href="https://www.tiktok.com/tag/princing?refer=embed">#princing</a> <a target="_blank" title="♬ Epic Orchestra - Red Cat Blue" href="https://www.tiktok.com/music/Epic-Orchestra-6817535497867364354?refer=embed">♬ Epic Orchestra - Red Cat Blue</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script></div></div>
+	<div class="col">
+		<div class="container-fluid">
+			<br>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Precio final</label>
+				<input type="text" class="form-control" id="precioFinal" placeholder="250000">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">valor del iva sin el símbolo %</label>
+				<input type="text" class="form-control" id="iva" placeholder="19">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calcularValorIvaIncluido()">Calcular</button>
+			<hr>
+			<br>
+			<div class="mb-3">
+				<div class="alert alert-info" role="alert" id="resultado">
+					
+				</div>
+				<div class="alert alert-info" role="alert" id="resultado2">
+					
+				</div>
+				<a href="index.html" class="btn btn-outline-dark">Volver</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+ <script type="text/javascript">
+function calcularValorIvaIncluido() {
+  var precioFinal = document.getElementById('precioFinal').value;
+  var iva = document.getElementById('iva').value;
+  var ivaDecimal = iva / 100; // Convertir el iva a decimal
+  var precioPropio = precioFinal / (1 + ivaDecimal); // Fórmula para determinar el precio propio
+  var valorIva = precioFinal-precioPropio;
+  var resultado = precioPropio.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+  //var resultado = resultad.toFixed(0);
+  var mensaje = 'El precio propio del producto es: '.concat(resultado);
+	
+  document.getElementById("resultado").innerHTML = mensaje; // Devolverlo como cadena de texto
+
+  var resultado2 = valorIva.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+  var mensaje2 = 'El valor del IVA para este producto es: '.concat(resultado2);
+	
+  document.getElementById("resultado2").innerHTML = mensaje2; // Devolverlo como cadena de texto
+}
+
+ </script>
+	
+<script async src="https://www.tiktok.com/embed.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
