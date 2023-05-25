@@ -76,10 +76,12 @@
 
 		var descuentoDecimal = descuento/100;
 		var descuentoNum = precioInicial*descuentoDecimal;
+		var descuentoNum2 = descuentoNum.toLocaleString("es-CO", { style: "currency", currency: "COP" });
 		var precioFinal = precioInicial-descuentoNum;
 
 		var resultado = precioFinal.toLocaleString("es-CO", { style: "currency", currency: "COP" });
-		var mensaje = 'El precio final sería: '.concat(resultado);
+		var mensaje2 = ' con un descuento de: '.concat(descuentoNum2);
+		var mensaje = 'El precio final sería: '.concat(resultado, mensaje2);
 		document.getElementById("resultado1").innerHTML = mensaje;
 	}
 
@@ -89,14 +91,13 @@
 		var precioFinal = precioInicial-descuento;
 		var porcentaje2 =100/(precioInicial/descuento);
 		var porcentaje = porcentaje2.toFixed(2);
-		//var descuentoDecimal = descuento/100;
-		//var descuentoNum = precioInicial*descuentoDecimal;
+
 		var resultado = precioFinal.toLocaleString("es-CO", { style: "currency", currency: "COP" });
-		var mensaje = 'El precio final sería: '.concat(resultado);
-		var mensaje2 = ' con un descuento del '.concat(porcentaje);
-		var mensaje3 = mensaje.concat(mensaje2);
-		var mensaje4 = mensaje3.concat('%');
-		document.getElementById("resultado2").innerHTML = mensaje4;
+		var mensaje1 = ' con un descuento del '.concat(porcentaje);
+		var mensaje2 = '%';
+		var mensaje = 'El precio final sería: '.concat(resultado, mensaje1, mensaje2);
+		
+		document.getElementById("resultado2").innerHTML = mensaje;
 	}
 
 </script>
