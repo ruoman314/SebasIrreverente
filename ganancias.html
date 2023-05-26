@@ -95,8 +95,8 @@
 	function calcularGananciaPor(){
 		var costoUnitario = document.getElementById('costoUnitario2').value;
 		var precioVenta = document.getElementById('precioVenta').value;
-
-		var gananci = (costoUnitario/precioVenta)*100;
+		var gan = (costoUnitario/precioVenta)*100;
+		var gananci = 100-gan;
 		var ganancia = gananci.toFixed(2);
 		
 		var mensaje2 = '%';
