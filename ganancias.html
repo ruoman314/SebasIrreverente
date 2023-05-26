@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<title>Calcular ganancias</title>
+</head>
+<body>
+<div class="row">
+	<nav class="navbar bg-dark" data-bs-theme="dark">
+	<div class="container text-center">
+		<h4 style="color: #FFFFFF;">Calcular Ganancias</h4>
+		</div>
+	</nav>
+</div>
+<div class="row">
+	<div class="col"><div class="container-fluid">
+		<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@seaguilar/video/7078816983365586182" data-video-id="7078816983365586182" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@seaguilar" href="https://www.tiktok.com/@seaguilar?refer=embed">@seaguilar</a> Fórmula oficial 👍😉 <a title="finanzasempresariales" target="_blank" href="https://www.tiktok.com/tag/finanzasempresariales?refer=embed">#finanzasempresariales</a> <a title="tipsdenegocios" target="_blank" href="https://www.tiktok.com/tag/tipsdenegocios?refer=embed">#tipsdenegocios</a> <a title="finanzasnegocio" target="_blank" href="https://www.tiktok.com/tag/finanzasnegocio?refer=embed">#finanzasnegocio</a> <a title="pymes" target="_blank" href="https://www.tiktok.com/tag/pymes?refer=embed">#pymes</a> <a title="negociospequeños" target="_blank" href="https://www.tiktok.com/tag/negociospeque%C3%B1os?refer=embed">#negociospequeños</a> <a title="emprender" target="_blank" href="https://www.tiktok.com/tag/emprender?refer=embed">#emprender</a> <a title="emprendimiento" target="_blank" href="https://www.tiktok.com/tag/emprendimiento?refer=embed">#emprendimiento</a> <a title="negocios" target="_blank" href="https://www.tiktok.com/tag/negocios?refer=embed">#negocios</a> <a target="_blank" title="♬ sonido original - Seaguilar" href="https://www.tiktok.com/music/sonido-original-7078816942634650374?refer=embed">♬ sonido original - Seaguilar</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+	</div></div>
+	<div class="col">
+		<div class="container-fluid">
+			<div class="container text-center">
+			<h4>Calcular ganancia, <strong>¿cuál es mi ganancia en la venta?</strong></h4>
+	        </div>
+	        <div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Costo unitario</label>
+				<input type="text" class="form-control" id="costoUnitario" placeholder="200000">
+			</div>
+			<br>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Porcentaje de ganancia sin el simbolo %</label>
+				<input type="text" class="form-control" id="ganancia" placeholder="25">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calcularGanancia()">Calcular Ganancia</button>
+			<hr>
+			<div class="mb-3">
+				<div class="alert alert-info" role="alert" id="resultado1">
+					
+				</div>
+				<a href="index.html" class="btn btn-outline-dark">Volver</a>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="container text-center">
+			<h4>Calcular ganancia, <strong>¿cuál es mi ganancia porcentual en la venta?</strong></h4>
+	        </div>
+	        <div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Costo unitario</label>
+				<input type="text" class="form-control" id="costoUnitario2" placeholder="200000">
+			</div>
+			<br>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Precio de venta</label>
+				<input type="text" class="form-control" id="precioVenta" placeholder="25">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="calcularGananciaPor()">Calcular Ganancia (%)</button>
+			<hr>
+			<div class="mb-3">
+				<div class="alert alert-info" role="alert" id="resultado2">
+					
+				</div>
+				<a href="index.html" class="btn btn-outline-dark">Volver</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+	function calcularGanancia(){
+		var costoUnitario = document.getElementById('costoUnitario').value;
+		var ganancia = document.getElementById('ganancia').value;
+
+		//var gananciaDecimal = ganancia/100;
+		var ganan = 100-ganancia;
+		var ganan2 = ganan/100;
+		var precioFina = costoUnitario/ganan2;
+		var valorGananci = precioFina-costoUnitario;
+		var valorGanancia = valorGananci.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+		var precioFinal = precioFina.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+
+		/*var descuentoNum = precioInicial*descuentoDecimal;
+		var descuentoNum2 = descuentoNum.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+		var precioFinal = precioInicial-descuentoNum;*/
+
+		var mensaje2 = ' con una ganancia del: '.concat(valorGanancia);
+		var mensaje = 'El precio final sería: '.concat(precioFinal, mensaje2);
+		document.getElementById("resultado1").innerHTML = mensaje;
+	}
+
+	function calcularGananciaPor(){
+		var costoUnitario = document.getElementById('costoUnitario2').value;
+		var precioVenta = document.getElementById('precioVenta').value;
+
+		var gananci = (costoUnitario/precioVenta)*100;
+		var ganancia = gananci.toFixed(2);
+		
+		var mensaje2 = '%';
+		var mensaje = 'El porcentaje de ganancia es: '.concat(ganancia, mensaje2);
+		document.getElementById("resultado2").innerHTML = mensaje;
+	}
+
+</script>
+
+</body>
+</html>
